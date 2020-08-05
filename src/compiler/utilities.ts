@@ -5825,7 +5825,7 @@ namespace ts {
 
     export function getLanguageVariant(scriptKind: ScriptKind) {
         // .tsx and .jsx files are treated as jsx language variant.
-        return scriptKind === ScriptKind.TSX || scriptKind === ScriptKind.JSX || scriptKind === ScriptKind.JS || scriptKind === ScriptKind.JSON ? LanguageVariant.JSX : LanguageVariant.Standard;
+        return scriptKind === ScriptKind.TSX || scriptKind === ScriptKind.JSX || scriptKind === ScriptKind.JS || scriptKind === ScriptKind.JSON ? LanguageVariant.JSX : scriptKind === ScriptKind.TOFFEE ? LanguageVariant.Toffeescript : LanguageVariant.Standard;
     }
 
     export function getEmitScriptTarget(compilerOptions: CompilerOptions) {
@@ -6332,6 +6332,8 @@ namespace ts {
                 return ScriptKind.TS;
             case Extension.Tsx:
                 return ScriptKind.TSX;
+            case Extension.Toffee:
+                return ScriptKind.TOFFEE;
             case Extension.Json:
                 return ScriptKind.JSON;
             default:
@@ -6342,7 +6344,7 @@ namespace ts {
     /**
      *  List of supported extensions in order of file resolution precedence.
      */
-    export const supportedTSExtensions: readonly Extension[] = [Extension.Ts, Extension.Tsx, Extension.Dts];
+    export const supportedTSExtensions: readonly Extension[] = [Extension.Ts, Extension.Tsx, Extension.Toffee, Extension.Dts];
     export const supportedTSExtensionsWithJson: readonly Extension[] = [Extension.Ts, Extension.Tsx, Extension.Dts, Extension.Json];
     /** Must have ".d.ts" first because if ".ts" goes first, that will be detected as the extension instead of ".d.ts". */
     export const supportedTSExtensionsForExtractExtension: readonly Extension[] = [Extension.Dts, Extension.Ts, Extension.Tsx];

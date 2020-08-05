@@ -228,6 +228,8 @@ namespace ts {
             updateExpressionStatement,
             createIfStatement,
             updateIfStatement,
+            createUnlessStatement,
+            updateUnlessStatement,
             createDoStatement,
             updateDoStatement,
             createWhileStatement,
@@ -3057,6 +3059,28 @@ namespace ts {
                 || node.thenStatement !== thenStatement
                 || node.elseStatement !== elseStatement
                 ? update(createIfStatement(expression, thenStatement, elseStatement), node)
+                : node;
+        }
+
+        // @api
+        function createUnlessStatement(expression: Expression, thenStatement: Statement, elseStatement?: Statement) {
+            const node = createBaseNode<UnlessStatement>(SyntaxKind.UnlessStatement);
+            node.expression = expression;
+            node.thenStatement = asEmbeddedStatement(thenStatement);
+            node.elseStatement = asEmbeddedStatement(elseStatement);
+            node.transformFlags |=
+                propagateChildFlags(node.expression) |
+                propagateChildFlags(node.thenStatement) |
+                propagateChildFlags(node.elseStatement);
+            return node;
+        }
+
+        // @api
+        function updateUnlessStatement(node: UnlessStatement, expression: Expression, thenStatement: Statement, elseStatement: Statement | undefined) {
+            return node.expression !== expression
+                || node.thenStatement !== thenStatement
+                || node.elseStatement !== elseStatement
+                ? update(createUnlessStatement(expression, thenStatement, elseStatement), node)
                 : node;
         }
 

@@ -144,6 +144,7 @@ namespace ts {
         undefined: SyntaxKind.UndefinedKeyword,
         unique: SyntaxKind.UniqueKeyword,
         unknown: SyntaxKind.UnknownKeyword,
+        unless: SyntaxKind.UnlessKeyword,
         var: SyntaxKind.VarKeyword,
         void: SyntaxKind.VoidKeyword,
         while: SyntaxKind.WhileKeyword,

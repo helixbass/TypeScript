@@ -186,6 +186,7 @@ namespace ts {
         FromKeyword,
         GlobalKeyword,
         BigIntKeyword,
+        UnlessKeyword,
         OfKeyword, // LastKeyword and LastToken and LastContextualKeyword
 
         // Parse tree nodes
@@ -275,6 +276,7 @@ namespace ts {
         VariableStatement,
         ExpressionStatement,
         IfStatement,
+        UnlessStatement,
         DoStatement,
         WhileStatement,
         ForStatement,
@@ -598,6 +600,7 @@ namespace ts {
         | SyntaxKind.UndefinedKeyword
         | SyntaxKind.UniqueKeyword
         | SyntaxKind.UnknownKeyword
+        | SyntaxKind.UnlessKeyword
         | SyntaxKind.VarKeyword
         | SyntaxKind.VoidKeyword
         | SyntaxKind.WhileKeyword
@@ -2613,6 +2616,13 @@ namespace ts {
 
     export interface IfStatement extends Statement {
         readonly kind: SyntaxKind.IfStatement;
+        readonly expression: Expression;
+        readonly thenStatement: Statement;
+        readonly elseStatement?: Statement;
+    }
+
+    export interface UnlessStatement extends Statement {
+        readonly kind: SyntaxKind.UnlessStatement;
         readonly expression: Expression;
         readonly thenStatement: Statement;
         readonly elseStatement?: Statement;
@@ -5829,13 +5839,14 @@ namespace ts {
         JSX = 2,
         TS = 3,
         TSX = 4,
-        External = 5,
-        JSON = 6,
+        TOFFEE = 5,
+        External = 6,
+        JSON = 7,
         /**
          * Used on extensions that doesn't define the ScriptKind but the content defines it.
          * Deferred extensions are going to be included in all project contexts.
          */
-        Deferred = 7
+        Deferred = 8
     }
 
     export const enum ScriptTarget {
@@ -5854,7 +5865,8 @@ namespace ts {
 
     export const enum LanguageVariant {
         Standard,
-        JSX
+        JSX,
+        Toffeescript
     }
 
     /** Either a parsed command line or a parsed tsconfig.json */
@@ -6177,6 +6189,7 @@ namespace ts {
         Dts = ".d.ts",
         Js = ".js",
         Jsx = ".jsx",
+        Toffee = ".toffee",
         Json = ".json",
         TsBuildInfo = ".tsbuildinfo"
     }
@@ -6860,6 +6873,8 @@ namespace ts {
         updateExpressionStatement(node: ExpressionStatement, expression: Expression): ExpressionStatement;
         createIfStatement(expression: Expression, thenStatement: Statement, elseStatement?: Statement): IfStatement;
         updateIfStatement(node: IfStatement, expression: Expression, thenStatement: Statement, elseStatement: Statement | undefined): IfStatement;
+        createUnlessStatement(expression: Expression, thenStatement: Statement, elseStatement?: Statement): UnlessStatement;
+        updateUnlessStatement(node: UnlessStatement, expression: Expression, thenStatement: Statement, elseStatement: Statement | undefined): UnlessStatement;
         createDoStatement(statement: Statement, expression: Expression): DoStatement;
         updateDoStatement(node: DoStatement, statement: Statement, expression: Expression): DoStatement;
         createWhileStatement(expression: Expression, statement: Statement): WhileStatement;

@@ -88,6 +88,7 @@ namespace ts.Completions.StringCompletions {
             case Extension.Jsx: return ScriptElementKindModifier.jsxModifier;
             case Extension.Ts: return ScriptElementKindModifier.tsModifier;
             case Extension.Tsx: return ScriptElementKindModifier.tsxModifier;
+            case Extension.Toffee: return ScriptElementKindModifier.toffeeModifier;
             case Extension.TsBuildInfo: return Debug.fail(`Extension ${Extension.TsBuildInfo} is unsupported.`);
             case undefined: return ScriptElementKindModifier.none;
             default:

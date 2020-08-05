@@ -737,6 +737,9 @@ namespace ts {
                 case SyntaxKind.IfStatement:
                     bindIfStatement(<IfStatement>node);
                     break;
+                case SyntaxKind.UnlessStatement:
+                    bindUnlessStatement(<UnlessStatement>node);
+                    break;
                 case SyntaxKind.ReturnStatement:
                 case SyntaxKind.ThrowStatement:
                     bindReturnOrThrow(<ReturnStatement | ThrowStatement>node);
@@ -1136,6 +1139,20 @@ namespace ts {
             bind(node.elseStatement);
             addAntecedent(postIfLabel, currentFlow);
             currentFlow = finishFlowLabel(postIfLabel);
+        }
+
+        function bindUnlessStatement(node: UnlessStatement): void {
+            const thenLabel = createBranchLabel();
+            const elseLabel = createBranchLabel();
+            const postUnlessLabel = createBranchLabel();
+            bindCondition(node.expression, thenLabel, elseLabel);
+            currentFlow = finishFlowLabel(thenLabel);
+            bind(node.thenStatement);
+            addAntecedent(postUnlessLabel, currentFlow);
+            currentFlow = finishFlowLabel(elseLabel);
+            bind(node.elseStatement);
+            addAntecedent(postUnlessLabel, currentFlow);
+            currentFlow = finishFlowLabel(postUnlessLabel);
         }
 
         function bindReturnOrThrow(node: ReturnStatement | ThrowStatement): void {

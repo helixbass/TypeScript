@@ -5530,6 +5530,17 @@ namespace ts {
             return finishNode(factory.createIfStatement(expression, thenStatement, elseStatement), pos);
         }
 
+        function parseUnlessStatement(): UnlessStatement {
+            const pos = getNodePos();
+            parseExpected(SyntaxKind.UnlessKeyword);
+            parseExpected(SyntaxKind.OpenParenToken);
+            const expression = allowInAnd(parseExpression);
+            parseExpected(SyntaxKind.CloseParenToken);
+            const thenStatement = parseStatement();
+            const elseStatement = parseOptional(SyntaxKind.ElseKeyword) ? parseStatement() : undefined;
+            return finishNode(factory.createUnlessStatement(expression, thenStatement, elseStatement), pos);
+        }
+
         function parseDoStatement(): DoStatement {
             const pos = getNodePos();
             parseExpected(SyntaxKind.DoKeyword);
@@ -5918,6 +5929,11 @@ namespace ts {
                     // immediately follows. Otherwise they're an identifier in an expression statement.
                     return isStartOfDeclaration() || !lookAhead(nextTokenIsIdentifierOrKeywordOnSameLine);
 
+                case SyntaxKind.UnlessKeyword:
+                    if (languageVariant === LanguageVariant.Toffeescript) {
+                        return true;
+                    }
+                    // falls through
                 default:
                     return isStartOfExpression();
             }
@@ -5953,6 +5969,11 @@ namespace ts {
                     return parseClassDeclaration(getNodePos(), hasPrecedingJSDocComment(), /*decorators*/ undefined, /*modifiers*/ undefined);
                 case SyntaxKind.IfKeyword:
                     return parseIfStatement();
+                case SyntaxKind.UnlessKeyword:
+                    if (languageVariant === LanguageVariant.Toffeescript) {
+                        return parseUnlessStatement();
+                    }
+                    break;
                 case SyntaxKind.DoKeyword:
                     return parseDoStatement();
                 case SyntaxKind.WhileKeyword:
