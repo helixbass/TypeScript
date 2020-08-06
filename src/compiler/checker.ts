@@ -32975,6 +32975,20 @@ namespace ts {
             checkSourceElement(node.elseStatement);
         }
 
+        function checkUnlessStatement(node: UnlessStatement) {
+            // Grammar checking
+            checkGrammarStatementInAmbientContext(node);
+            const type = checkTruthinessExpression(node.expression);
+            checkTestingKnownTruthyCallableType(node.expression, node.thenStatement, type);
+            checkSourceElement(node.thenStatement);
+
+            if (node.thenStatement.kind === SyntaxKind.EmptyStatement) {
+                error(node.thenStatement, Diagnostics.The_body_of_an_if_statement_cannot_be_the_empty_statement);
+            }
+
+            checkSourceElement(node.elseStatement);
+        }
+
         function checkTestingKnownTruthyCallableType(condExpr: Expression, body: Statement | Expression, type: Type) {
             if (!strictNullChecks) {
                 return;
@@ -35783,6 +35797,8 @@ namespace ts {
                     return checkExpressionStatement(<ExpressionStatement>node);
                 case SyntaxKind.IfStatement:
                     return checkIfStatement(<IfStatement>node);
+                case SyntaxKind.UnlessStatement:
+                    return checkUnlessStatement(<UnlessStatement>node);
                 case SyntaxKind.DoStatement:
                     return checkDoStatement(<DoStatement>node);
                 case SyntaxKind.WhileStatement:

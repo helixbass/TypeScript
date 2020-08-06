@@ -1145,7 +1145,7 @@ namespace ts {
             const thenLabel = createBranchLabel();
             const elseLabel = createBranchLabel();
             const postUnlessLabel = createBranchLabel();
-            bindCondition(node.expression, thenLabel, elseLabel);
+            bindCondition(node.expression, elseLabel, thenLabel);
             currentFlow = finishFlowLabel(thenLabel);
             bind(node.thenStatement);
             addAntecedent(postUnlessLabel, currentFlow);

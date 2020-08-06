@@ -298,6 +298,10 @@ namespace ts {
                 return visitNode(cbNode, (<IfStatement>node).expression) ||
                     visitNode(cbNode, (<IfStatement>node).thenStatement) ||
                     visitNode(cbNode, (<IfStatement>node).elseStatement);
+            case SyntaxKind.UnlessStatement:
+                return visitNode(cbNode, (<UnlessStatement>node).expression) ||
+                    visitNode(cbNode, (<UnlessStatement>node).thenStatement) ||
+                    visitNode(cbNode, (<UnlessStatement>node).elseStatement);
             case SyntaxKind.DoStatement:
                 return visitNode(cbNode, (<DoStatement>node).statement) ||
                     visitNode(cbNode, (<DoStatement>node).expression);
