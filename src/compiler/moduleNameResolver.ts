@@ -1094,7 +1094,7 @@ namespace ts {
             case Extensions.DtsOnly:
                 return tryExtension(Extension.Dts);
             case Extensions.TypeScript:
-                return tryExtension(Extension.Ts) || tryExtension(Extension.Tsx) || tryExtension(Extension.Dts);
+                return tryExtension(Extension.Ts) || tryExtension(Extension.Tsx) || tryExtension(Extension.Toffee) || tryExtension(Extension.Dts);
             case Extensions.JavaScript:
                 return tryExtension(Extension.Js) || tryExtension(Extension.Jsx);
             case Extensions.TSConfig:

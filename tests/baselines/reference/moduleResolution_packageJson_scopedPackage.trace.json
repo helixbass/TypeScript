@@ -6,6 +6,7 @@
     "'package.json' does not have a 'typesVersions' field.",
     "File '/node_modules/@foo/bar.ts' does not exist.",
     "File '/node_modules/@foo/bar.tsx' does not exist.",
+    "File '/node_modules/@foo/bar.toffee' does not exist.",
     "File '/node_modules/@foo/bar.d.ts' does not exist.",
     "'package.json' does not have a 'typings' field.",
     "'package.json' has 'types' field 'types.d.ts' that references '/node_modules/@foo/bar/types.d.ts'.",

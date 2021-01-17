@@ -19,6 +19,7 @@
     "Loading module as file / folder, candidate module location '/bar', target file type 'TypeScript'.",
     "File '/bar.ts' does not exist.",
     "File '/bar.tsx' does not exist.",
+    "File '/bar.toffee' does not exist.",
     "File '/bar.d.ts' does not exist.",
     "Directory '/bar' does not exist, skipping all lookups in it.",
     "'baseUrl' option is set to '/root', using this value to resolve non-relative module name '/bar'.",

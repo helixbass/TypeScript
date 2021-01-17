@@ -8,6 +8,7 @@
     "Loading module as file / folder, candidate module location 'tests/cases/compiler/src/someModule', target file type 'TypeScript'.",
     "File 'tests/cases/compiler/src/someModule.ts' does not exist.",
     "File 'tests/cases/compiler/src/someModule.tsx' does not exist.",
+    "File 'tests/cases/compiler/src/someModule.toffee' does not exist.",
     "File 'tests/cases/compiler/src/someModule.d.ts' does not exist.",
     "Directory 'tests/cases/compiler/src/someModule' does not exist, skipping all lookups in it.",
     "Loading module 'someModule' from 'node_modules' folder, target file type 'TypeScript'.",

@@ -62,11 +62,15 @@ File '/home/user/projects/myproject/node_modules/a.ts' does not exist.
 
 File '/home/user/projects/myproject/node_modules/a.tsx' does not exist.
 
+File '/home/user/projects/myproject/node_modules/a.toffee' does not exist.
+
 File '/home/user/projects/myproject/node_modules/a.d.ts' does not exist.
 
 File '/home/user/projects/myproject/node_modules/a/index.ts' does not exist.
 
 File '/home/user/projects/myproject/node_modules/a/index.tsx' does not exist.
+
+File '/home/user/projects/myproject/node_modules/a/index.toffee' does not exist.
 
 File '/home/user/projects/myproject/node_modules/a/index.d.ts' exist - use it as a name resolution result.
 

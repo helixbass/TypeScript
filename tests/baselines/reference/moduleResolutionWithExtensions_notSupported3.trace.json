@@ -4,6 +4,7 @@
     "Loading module as file / folder, candidate module location '/jsx', target file type 'TypeScript'.",
     "File '/jsx.ts' does not exist.",
     "File '/jsx.tsx' does not exist.",
+    "File '/jsx.toffee' does not exist.",
     "File '/jsx.d.ts' does not exist.",
     "Directory '/jsx' does not exist, skipping all lookups in it.",
     "Loading module as file / folder, candidate module location '/jsx', target file type 'JavaScript'.",

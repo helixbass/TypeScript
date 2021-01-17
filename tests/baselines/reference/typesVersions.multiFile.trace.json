@@ -6,6 +6,7 @@
     "'package.json' has a 'typesVersions' field with version-specific path mappings.",
     "File 'tests/cases/conformance/moduleResolution/node_modules/ext.ts' does not exist.",
     "File 'tests/cases/conformance/moduleResolution/node_modules/ext.tsx' does not exist.",
+    "File 'tests/cases/conformance/moduleResolution/node_modules/ext.toffee' does not exist.",
     "File 'tests/cases/conformance/moduleResolution/node_modules/ext.d.ts' does not exist.",
     "'package.json' does not have a 'typings' field.",
     "'package.json' has 'types' field 'index' that references 'tests/cases/conformance/moduleResolution/node_modules/ext/index'.",
@@ -16,6 +17,7 @@
     "Loading module as file / folder, candidate module location 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/index', target file type 'TypeScript'.",
     "File 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/index.ts' does not exist.",
     "File 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/index.tsx' does not exist.",
+    "File 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/index.toffee' does not exist.",
     "File 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/index.d.ts' exist - use it as a name resolution result.",
     "Resolving real path for 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/index.d.ts', result 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/index.d.ts'.",
     "======== Module name 'ext' was successfully resolved to 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/index.d.ts' with Package ID 'ext/ts3.1/index.d.ts@1.0.0'. ========",
@@ -29,6 +31,7 @@
     "Trying substitution 'ts3.1/*', candidate module location: 'ts3.1/other'.",
     "File 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/other.ts' does not exist.",
     "File 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/other.tsx' does not exist.",
+    "File 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/other.toffee' does not exist.",
     "File 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/other.d.ts' exist - use it as a name resolution result.",
     "Resolving real path for 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/other.d.ts', result 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/other.d.ts'.",
     "======== Module name 'ext/other' was successfully resolved to 'tests/cases/conformance/moduleResolution/node_modules/ext/ts3.1/other.d.ts' with Package ID 'ext/ts3.1/other.d.ts@1.0.0'. ========"

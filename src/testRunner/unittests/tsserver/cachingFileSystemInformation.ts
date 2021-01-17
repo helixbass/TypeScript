@@ -191,6 +191,7 @@ namespace ts.projectSystem {
                     locations.push(
                         combinePaths(ancestor, `${module}.ts`),
                         combinePaths(ancestor, `${module}.tsx`),
+                        combinePaths(ancestor, `${module}.toffee`),
                         combinePaths(ancestor, `${module}.d.ts`)
                     );
                 });

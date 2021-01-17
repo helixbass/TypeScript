@@ -101,6 +101,8 @@ File '/user/username/projects/myproject/plugin-one/node_modules/typescript-fsa.t
 
 File '/user/username/projects/myproject/plugin-one/node_modules/typescript-fsa.tsx' does not exist.
 
+File '/user/username/projects/myproject/plugin-one/node_modules/typescript-fsa.toffee' does not exist.
+
 File '/user/username/projects/myproject/plugin-one/node_modules/typescript-fsa.d.ts' does not exist.
 
 'package.json' does not have a 'typings' field.
@@ -112,6 +114,8 @@ File '/user/username/projects/myproject/plugin-one/node_modules/typescript-fsa.d
 File '/user/username/projects/myproject/plugin-one/node_modules/typescript-fsa/index.ts' does not exist.
 
 File '/user/username/projects/myproject/plugin-one/node_modules/typescript-fsa/index.tsx' does not exist.
+
+File '/user/username/projects/myproject/plugin-one/node_modules/typescript-fsa/index.toffee' does not exist.
 
 File '/user/username/projects/myproject/plugin-one/node_modules/typescript-fsa/index.d.ts' exist - use it as a name resolution result.
 
@@ -131,11 +135,15 @@ File '/user/username/projects/myproject/plugin-one/node_modules/plugin-two.ts' d
 
 File '/user/username/projects/myproject/plugin-one/node_modules/plugin-two.tsx' does not exist.
 
+File '/user/username/projects/myproject/plugin-one/node_modules/plugin-two.toffee' does not exist.
+
 File '/user/username/projects/myproject/plugin-one/node_modules/plugin-two.d.ts' does not exist.
 
 File '/user/username/projects/myproject/plugin-one/node_modules/plugin-two/index.ts' does not exist.
 
 File '/user/username/projects/myproject/plugin-one/node_modules/plugin-two/index.tsx' does not exist.
+
+File '/user/username/projects/myproject/plugin-one/node_modules/plugin-two/index.toffee' does not exist.
 
 File '/user/username/projects/myproject/plugin-one/node_modules/plugin-two/index.d.ts' exist - use it as a name resolution result.
 
@@ -157,6 +165,8 @@ File '/user/username/projects/myProject/plugin-two/node_modules/typescript-fsa.t
 
 File '/user/username/projects/myProject/plugin-two/node_modules/typescript-fsa.tsx' does not exist.
 
+File '/user/username/projects/myProject/plugin-two/node_modules/typescript-fsa.toffee' does not exist.
+
 File '/user/username/projects/myProject/plugin-two/node_modules/typescript-fsa.d.ts' does not exist.
 
 'package.json' does not have a 'typings' field.
@@ -168,6 +178,8 @@ File '/user/username/projects/myProject/plugin-two/node_modules/typescript-fsa.d
 File '/user/username/projects/myProject/plugin-two/node_modules/typescript-fsa/index.ts' does not exist.
 
 File '/user/username/projects/myProject/plugin-two/node_modules/typescript-fsa/index.tsx' does not exist.
+
+File '/user/username/projects/myProject/plugin-two/node_modules/typescript-fsa/index.toffee' does not exist.
 
 File '/user/username/projects/myProject/plugin-two/node_modules/typescript-fsa/index.d.ts' exist - use it as a name resolution result.
 
